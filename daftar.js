@@ -5,7 +5,7 @@
 // Contoh: "https://script.google.com/macros/s/AKfycb.../exec"
 // Langkah lengkapnya ada di PANDUAN-FORMULIR.md
 // ============================================================
-var SCRIPT_URL = "";
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbza0JAdi5oHnsS7fo8i-Yn45Kt6NaeaaR3zN9qeHybUpivZOq_gv4BjAGVr8aI06FQ/exec";
 
 // Daftar lomba. "maxAnggota" = jumlah anggota tambahan di luar ketua.
 // Sesuaikan dengan ketentuan di guidebook masing-masing lomba.
