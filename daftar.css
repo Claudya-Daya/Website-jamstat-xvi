@@ -1,0 +1,46 @@
+/* Halaman pendaftaran */
+.reg-page { background: var(--forest-800); }
+.reg { padding: 112px var(--gutter) 96px; }
+.reg-wrap { max-width: 720px; margin-inline: auto; }
+.reg-intro h1 { font-size: clamp(2.25rem, 6vw, 3.5rem); font-variation-settings: "SOFT" 100; margin-bottom: 12px; }
+.reg-intro p { opacity: .9; margin-bottom: 32px; }
+
+.notice { padding: 14px 18px; border-radius: 12px; background: rgba(251, 139, 163, .16); border: 1px solid var(--pink); margin-bottom: 24px; }
+
+.form { background: var(--cream); color: var(--forest-950); border-radius: 20px; padding: clamp(20px, 4vw, 40px); box-shadow: 0 18px 40px rgba(2, 20, 12, .4); }
+.form fieldset { border: 0; padding: 0; margin: 0 0 32px; min-width: 0; }
+.form legend { font: 700 1.375rem var(--serif); color: var(--forest-800); padding: 0; margin-bottom: 16px; }
+.field { margin-bottom: 18px; }
+.field label { display: block; font-weight: 700; margin-bottom: 6px; }
+.field input[type="text"], .field input[type="email"], .field input[type="tel"], .field select {
+  width: 100%; font: inherit; color: var(--forest-950); background: #fff;
+  border: 2px solid rgba(103, 76, 55, .4); border-radius: 10px; padding: 12px 14px;
+}
+.field input[type="file"] { width: 100%; font: inherit; padding: 10px; background: #fff; border: 2px dashed rgba(103, 76, 55, .5); border-radius: 10px; }
+.field input:focus, .field select:focus { outline: 3px solid var(--pink); outline-offset: 1px; border-color: var(--forest-600); }
+.field input[aria-invalid="true"], .field select[aria-invalid="true"] { border-color: var(--red); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+.hint { font-size: .9375rem; color: var(--brown); margin: 6px 0 0; }
+
+.member { border-left: 4px solid var(--pink); padding-left: 16px; margin-bottom: 20px; }
+.member h3 { font: 600 1.125rem var(--serif); margin-bottom: 10px; color: var(--forest-600); }
+.member .remove { background: none; border: 0; padding: 0; font: 500 .9375rem var(--sans); color: var(--red); text-decoration: underline; cursor: pointer; margin-top: -6px; }
+
+.check label { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; }
+.check input { width: 22px; height: 22px; margin-top: 2px; flex: none; accent-color: var(--forest-600); }
+
+.error { color: #9b2c28; background: #fbe3e1; border-radius: 10px; padding: 12px 14px; font-weight: 500; }
+.form .btn[disabled] { opacity: .6; cursor: wait; transform: none; }
+.form .btn-ghost { border-color: var(--forest-800); color: var(--forest-800); }
+.form .btn-ghost:hover { background: var(--forest-800); color: var(--cream); }
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.success { background: var(--cream); color: var(--forest-950); border-radius: 20px; padding: clamp(24px, 5vw, 48px); text-align: center; box-shadow: 0 18px 40px rgba(2, 20, 12, .4); }
+.success h2 { font-size: 2rem; margin-bottom: 16px; color: var(--forest-800); }
+.reg-id { font: 700 clamp(1.5rem, 5vw, 2.25rem) var(--serif); color: var(--red); letter-spacing: .04em; margin-bottom: 20px; }
+.success .btn-ghost { border-color: var(--forest-800); color: var(--forest-800); }
+.success .btn-ghost:hover { background: var(--forest-800); color: var(--cream); }
+
+[hidden] { display: none !important; }

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pendaftaran – ETHEREA Jambore Statistika XVI</title>
+  <meta name="description" content="Formulir pendaftaran lomba dan seminar nasional Jambore Statistika XVI.">
+  <meta name="theme-color" content="#06311D">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="daftar.css">
+</head>
+<body class="reg-page">
+
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="ETHEREA, kembali ke beranda">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c4.2 3.7 9 7.3 9 11.6 0 2.6-2 4.4-4.4 4.4-1.3 0-2.4-.5-3.2-1.4.2 1.7.9 3.3 2.1 4.9H8.5c1.2-1.6 1.9-3.2 2.1-4.9-.8.9-1.9 1.4-3.2 1.4C5 18 3 16.2 3 13.6 3 9.3 7.8 5.7 12 2z"/></svg>
+    <span>ETHEREA</span>
+  </a>
+  <a class="btn btn-ghost btn-small" href="index.html#lomba">Kembali</a>
+</header>
+
+<main class="reg">
+  <div class="reg-wrap">
+    <div class="reg-intro">
+      <h1>Pendaftaran</h1>
+      <p>Isi data dengan benar. Baca guidebook lomba yang kamu pilih sebelum mendaftar.</p>
+    </div>
+
+    <div id="reg-notice" class="notice" role="status" hidden></div>
+
+    <form id="reg-form" class="form" novalidate>
+      <!-- Kolom jebakan untuk bot; pengunjung asli tidak melihat atau mengisinya -->
+      <div class="hp" aria-hidden="true">
+        <label>Jangan diisi <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <fieldset>
+        <legend>Pilih lomba</legend>
+        <div class="field">
+          <label for="lomba">Lomba atau acara</label>
+          <select id="lomba" name="lomba" required></select>
+          <p class="hint" id="lomba-hint"></p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend id="legend-tim">Tim</legend>
+        <div class="field">
+          <label for="nama_tim" id="label-tim">Nama tim</label>
+          <input id="nama_tim" name="nama_tim" type="text" maxlength="80" required autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="institusi">Asal sekolah atau kampus</label>
+          <input id="institusi" name="institusi" type="text" maxlength="120" required autocomplete="organization">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend id="legend-ketua">Ketua tim</legend>
+        <div class="field">
+          <label for="ketua_nama">Nama lengkap</label>
+          <input id="ketua_nama" name="ketua_nama" type="text" maxlength="100" required autocomplete="name">
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="ketua_email">Email aktif</label>
+            <input id="ketua_email" name="ketua_email" type="email" maxlength="120" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="ketua_wa">Nomor WhatsApp</label>
+            <input id="ketua_wa" name="ketua_wa" type="tel" inputmode="tel" maxlength="20" placeholder="08xxxxxxxxxx" required autocomplete="tel">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset id="members-set">
+        <legend>Anggota tim</legend>
+        <div id="members"></div>
+        <button type="button" class="btn btn-ghost btn-small" id="add-member">Tambah anggota</button>
+        <p class="hint" id="members-hint"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Berkas</legend>
+        <div class="field" id="field-id">
+          <label for="kartu" id="label-kartu">Kartu pelajar atau KTM ketua</label>
+          <input id="kartu" name="kartu" type="file" accept="image/jpeg,image/png,application/pdf" required>
+          <p class="hint">Format JPG, PNG, atau PDF. Maksimal 2 MB. Boleh diganti surat keterangan siswa aktif atau KRS terbaru.</p>
+        </div>
+        <div class="field">
+          <label for="bukti">Bukti pembayaran</label>
+          <input id="bukti" name="bukti" type="file" accept="image/jpeg,image/png,application/pdf" required>
+          <p class="hint">Format JPG, PNG, atau PDF. Maksimal 2 MB. Nominal dan rekening tujuan ada di guidebook.</p>
+        </div>
+      </fieldset>
+
+      <div class="field check">
+        <label>
+          <input type="checkbox" id="setuju" name="setuju" required>
+          <span>Saya memastikan data di atas benar dan setuju mengikuti ketentuan lomba di guidebook.</span>
+        </label>
+      </div>
+
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <button type="submit" class="btn btn-pink" id="submit">Kirim pendaftaran</button>
+    </form>
+
+    <section id="success" class="success" hidden aria-live="polite">
+      <h2>Pendaftaran terkirim</h2>
+      <p>Nomor pendaftaranmu:</p>
+      <p class="reg-id" id="reg-id"></p>
+      <p>Simpan nomor ini. Panitia akan memverifikasi bukti pembayaran, lalu menghubungi ketua tim lewat email atau WhatsApp.</p>
+      <a class="btn btn-ghost" href="index.html">Kembali ke beranda</a>
+    </section>
+  </div>
+</main>
+
+<script src="daftar.js"></script>
+</body>
+</html>

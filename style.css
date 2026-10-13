@@ -237,3 +237,9 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Tombol di kartu lomba (halaman utama) */
+.card { aspect-ratio: 5 / 7.4; }
+.card-body { inset: 52px 22px; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.card-actions .btn { margin: 0; }
