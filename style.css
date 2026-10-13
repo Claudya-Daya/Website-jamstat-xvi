@@ -238,8 +238,8 @@ p { margin: 0 0 1em; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-/* Tombol di kartu lomba (halaman utama) */
-.card { aspect-ratio: 5 / 7.4; }
-.card-body { inset: 52px 22px; }
-.card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+/* Kartu lomba: tinggi mengikuti isi, tidak lagi dikunci rasio */
+.card { aspect-ratio: auto; min-height: 372px; display: flex; }
+.card-body { position: relative; inset: auto; flex: 1; padding: 62px 26px 62px; justify-content: center; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .card-actions .btn { margin: 0; }
